@@ -1,4 +1,3 @@
-##
 <h1 align="center">DasPro Assignments</h1>
 
 <div align="center">
@@ -31,7 +30,7 @@
  1. Download this Repo
  2. Extract the zip file
  3. Compile with g++
- 4. Double click to execute exe file or type then file name in cmd the enter
+ 4. Double click to execute exe file or type the cpp file name in cmd then enter
 
 <div align="center">
 	<h2>Source Code</h2>
