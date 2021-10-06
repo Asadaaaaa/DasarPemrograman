@@ -35,7 +35,7 @@
 <div align="center">
 	<h2>Source Code</h2>
 </div>
-<h3>MacOS.cpp:</h3>
+<h3>Main_Windows.cpp:</h3>
 
 ```c++
 #include <iostream>
