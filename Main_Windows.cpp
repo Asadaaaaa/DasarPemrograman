@@ -89,9 +89,8 @@ int main() {
 			
 			goto MENU_TUJUH;
 		} else if(input == "8") {
-			warn = "Nanti gw tambahin kalo gabut!";
 			
-			goto MAIN_MENU_2;
+			goto MENU_DELAPAN;
 		} else if(input == "9") {
 			warn = "Nanti gw tambahin kalo gabut!";
 			
@@ -830,6 +829,124 @@ int main() {
 		} else {
 			
 			goto MENU_TUJUH;
+		}
+	}
+	
+	// MENU DELAPAN
+	MENU_DELAPAN: {
+		system("cls");
+		cout << "=-=-= Menu Delapan =-=-=" << endl;
+		cout << "  Tugas: Langganan Internet dan TV" << endl;
+		if(warn != "") {
+			cout << "Peringatan: " << warn << endl;
+			warn = "";
+		}
+		
+		cout << endl << "|------------------------------------|" << endl;
+		cout << "|1|Paket Biasa   |25 Mbps  |Rp 250.000|" << endl;
+		cout << "|2|Paket Combo   |35 Mbps  |Rp 300.000|" << endl;
+		cout << "|3|Paket Super   |50 Mbps  |Rp 500.000|" << endl;
+		cout << "|4|Paket Premium |100 Mbps |Rp 750.000|" << endl;
+		cout << "|-----------------------------------|" << endl;
+		
+		if(word1 == "") {
+			cout << endl << "> Pilih Paket 1-4: ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Harap pilih paket";
+				
+				goto MENU_DELAPAN;
+			}
+			
+			try{
+				num1 = stoi(input);
+				num1 = 0;
+			} catch(exception &err) {
+				warn = "Harap pilih paket berupa angka";
+				
+				goto MENU_DELAPAN;
+			}
+			word1 = input;
+			
+			goto MENU_DELAPAN;
+		}
+		cout << "  Paket: " << word1 << endl;
+		
+		if(num1 == 0) {
+			cout << endl << "> Langganan selama (bulan): ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Harap pilih paket";
+				
+				goto MENU_DELAPAN;
+			}
+			
+			try{
+				num1 = stoi(input);
+			} catch(exception &err) {
+				warn = "Harap pilih paket berupa angka";
+				
+				goto MENU_DELAPAN;
+			}
+			num1 = stoi(input);
+			
+			goto MENU_DELAPAN;
+		}
+		cout << "  Langganan selama: " << int(num1) << " bulan" << endl;
+		
+		if(word1 == "1") {
+			num2 = 250000 * num1;
+			if(num1 >= 3 && num1 < 12) {
+				cout << endl << "Total yang harus dibayar: Rp " << num2 * 0.05 << endl;
+			} else if(num1 >= 12){
+				cout << endl << "Total yang harus dibayar: Rp " << num2 * 0.1 << endl;
+			} else {
+				cout << endl << "Total yang harus dibayar: Rp " << num2 << endl;
+			}
+		} else if(word2 == "2") {
+			num2 = 300000 * num1;
+			if(num1 >= 3 && num1 < 12) {
+				cout << endl << "Total yang harus dibayar: Rp " << num2 * 0.05 << endl;
+			} else if(num1 >= 12){
+				cout << endl << "Total yang harus dibayar: Rp " << num2 * 0.1 << endl;
+			} else {
+				cout << endl << "Total yang harus dibayar: Rp " << num2 << endl;
+			}
+		} else if(word2 == "3") {
+			num2 = 500000 * num1;
+			if(num1 >= 3 && num1 < 12) {
+				cout << endl << "Total yang harus dibayar: Rp " << num2 * 0.05 << endl;
+			} else if(num1 >= 12){
+				cout << endl << "Total yang harus dibayar: Rp " << num2 * 0.1 << endl;
+			} else {
+				cout << endl << "Total yang harus dibayar: Rp " << num2 << endl;
+			}
+		} else if(word2 == "4") {
+			num2 = 750000 * num1;
+			if(num1 >= 3 && num1 < 12) {
+				cout << endl << "Total yang harus dibayar: Rp " << num2 * 0.05 << endl;
+			} else if(num1 >= 12){
+				cout << endl << "Total yang harus dibayar: Rp " << num2 * 0.1 << endl;
+			} else {
+				cout << endl << "Total yang harus dibayar: Rp " << num2 << endl;
+			}
+		}
+		
+		cout << endl << "> Kembali ke menu utama? [Y/n]: ";
+		getline(cin, input);
+		if(input == "y" || input == "Y") {
+			num1 = 0;
+			num2 = 0;
+			word1 = "";
+			
+			goto MAIN_MENU_2;
+		} else if(input == "n" || input == "N") {
+			system("cls");
+			
+			return 0;
+		} else {
+			
+			goto MENU_DELAPAN;
 		}
 	}
 	
