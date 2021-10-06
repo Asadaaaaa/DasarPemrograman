@@ -29,13 +29,13 @@
  - <h3>Step:</h3>
  1. Download this Repo
  2. Extract the zip file
- 3. Compile with g++
+ 3. Compile the cpp file depend to your operating system using, compile with MinGW
  4. Double click to execute exe file or type the cpp file name in cmd then enter
 
 <div align="center">
 	<h2>Source Code</h2>
 </div>
-<h3>Main.cpp:</h3>
+<h3>MacOS.cpp:</h3>
 
 ```c++
 #include <iostream>
@@ -43,16 +43,10 @@
 
 using namespace std;
 
-// Nama / Author: Muhammad Mikail Asada
-// NIM: 2109708
-// RPL 2021
-
-int main() {
-	// Menu Variable
+int main(){
 	string warn, input, word1, word2, word3;
 	float num1 = 0, num2 = 0, num3 = 0, num4 = 0;
-	
-	// MAIN MENU PAGE 1
+
 	MAIN_MENU: {
 		system("cls");
 		cout << "=-=-= Menu Utama =-=-=" << endl;
@@ -97,6 +91,6 @@ int main() {
 			goto MAIN_MENU;
 		}
 	}
-	
-	// Download This Repo to see more the source code
+        ...
 ```
+<p>Download this repo to see more source code</p>
