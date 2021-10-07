@@ -185,13 +185,18 @@ int main() {
 		cout << "  Nilai n: " << int1 << endl;
 		
 		for(int i = 1; i <= int1; i++){
-			if (i == 2 || i == 3) {
-				cout << "  PRIMA";
-			} else if (!(i <= 1 || i % 2 == 0 || i % 3 == 0)){
-				cout << "  PRIMA";
-			} else {
-				cout << "  " << i;
+			int2 = 0;
+  
+			for(int j = 1; j <= i; j++){
+				if(i % j == 0){
+					int2++;
+				}
 			}
+			cout << "  " << i;
+			if(int2 == 2) {
+				cout << " <--- Bilangan Prima";
+			}
+			
 			cout << endl;
 		}
 		
