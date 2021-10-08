@@ -10,6 +10,7 @@ int main() {
 	// MAIN MENU
 	MAIN_MENU: {
 		system("cls");
+		cout << "Muhammad Mikail Asada - 2109708 - 1A" << endl;
 		cout << "=-=-= MAIN UTAMA =-=-=" << endl;
 		cout << "  1. Honor Freelance" << endl;
 		cout << "  2. Bilangan Prima" << endl;
@@ -41,6 +42,7 @@ int main() {
 	// MENU SATU
 	MENU_SATU: {
 		system("cls");
+		cout << "Muhammad Mikail Asada - 2109708 - 1A" << endl;
 		cout << "=-=-= MENU SATU =-=-=" << endl;
 		cout << "  Task: Tentukan honor freelance" << endl;
 		if(warn != "") {
@@ -150,6 +152,7 @@ int main() {
 	// MENU DUA
 	MENU_DUA: {
 		system("cls");
+		cout << "Muhammad Mikail Asada - 2109708 - 1A" << endl;
 		cout << "=-=-= MENU DUA =-=-=" << endl;
 		cout << "  Task: Tentukan bilangan prima dari input pengulangan" << endl;
 		if(warn != "") {
@@ -219,6 +222,7 @@ int main() {
 	// MENU TIGA
 	MENU_TIGA: {
 		system("cls");
+		cout << "Muhammad Mikail Asada - 2109708 - 1A" << endl;
 		cout << "=-=-= MENU TIGA =-=-=" << endl;
 		cout << "  Task: Tentukan bilangan prima dari input pengulangan" << endl;
 		if(warn != "") {
