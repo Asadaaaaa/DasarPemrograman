@@ -1,11 +1,60 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
 // Nama / Author: Muhammad Mikail Asada
 // NIM: 2109708
 // RPL 2021
+
+int angkaTerbesar(int a, int b) {
+	int c = 0;
+	if(a > c) {
+		c = a;
+	}
+	if(b > c) {
+		c = b;
+	}
+	return c;
+}
+
+int penjumlahanDeret(int a) {
+	int num1 = 0, num2 = 0;
+	
+	cout << "  Deret : ";
+	for(int i = 0; i <= a; i++) {
+		num2 += i;
+		if(i < a && i > 0) {
+			cout << i << " + ";
+		}else if(i == a) {
+			cout << i << endl;
+		}
+	}
+	cout << "Total Deret : " << num2 << endl;
+	return 0;
+}
+
+int penjumlahan(int a, int b) {
+	return a + b;
+}
+
+int pengurangan(int a, int b) {
+	return a - b;
+}
+
+int perkalian(int a, int b) {
+	return a * b;
+}
+
+float pembagian(int a, int b) {
+	return a / b;
+}
+
+float akarKuadrat(int a) {
+	return sqrt(a);
+}
+
 
 int main() {
 	// Menu Variable
@@ -21,7 +70,7 @@ int main() {
 		cout << "  3). Menghitung Volume Bola" << endl;
 		cout << "  4). Conversi Menit ke Detik" << endl;
 		cout << "  5). Menghitung jumlah string" << endl;
-		cout << endl << "         (1/2)         " << endl;
+		cout << endl << "         (1/3)         " << endl;
 		cout << "=-=-= ( ) (-) (>) =-=-=" << endl;
 		
 		if(warn != "") {
@@ -65,9 +114,10 @@ int main() {
 		cout << "  6). Menentukan jumlah followers terbanyak" << endl;
 		cout << "  7). Seleksi model catwalk" << endl;
 		cout << "  8). Langganan Internet dan TV cable" << endl;
-		cout << "  9). Diamond" << endl << endl;
-		cout << endl << "         (2/2)         " << endl;
-		cout << "=-=-= (<) (-) ( ) =-=-=" << endl;
+		cout << "  9). Diamond" << endl;
+		cout << "  10). Honor Freelance" << endl;
+		cout << endl << "         (2/3)         " << endl;
+		cout << "=-=-= (<) (-) (>) =-=-=" << endl;
 		
 		if(warn != "") {
 			cout << endl << "Peringatan: " << warn;
@@ -82,6 +132,9 @@ int main() {
 		} else if(input == "<") {
 			
 			goto MAIN_MENU;
+		} else if(input == ">") {
+			
+			goto MAIN_MENU_3;
 		} else if(input == "6") {
 			
 			goto MENU_ENAM;
@@ -92,13 +145,62 @@ int main() {
 			
 			goto MENU_DELAPAN;
 		} else if(input == "9") {
-			warn = "Nanti gw tambahin kalo gabut!";
 			
-			goto MAIN_MENU_2;
+			goto MENU_SEMBILAN;
+		} else if(input == "10") {
+			
+			goto MENU_SEPULUH;
 		} else {
 			warn = "Menu tidak ditemukan!";
 			
 			goto MAIN_MENU_2;
+		}
+	}
+	
+	// MAIN MENU PAGE 3
+	MAIN_MENU_3: {
+		system("clear");
+		cout << "=-=-= Menu Utama =-=-=" << endl;
+		cout << "  11). Bilangan Prima" << endl;
+		cout << "  12). Login Form" << endl;
+		cout << "  13). (Function) Bilangan terbesar" << endl;
+		cout << "  14). (Function) Total deret" << endl;
+		cout << "  15). (Function) Penjumlahan dua bilangan" << endl;
+		cout << endl << "         (3/3)         " << endl;
+		cout << "=-=-= (<) (-) ( ) =-=-=" << endl;
+		
+		if(warn != "") {
+			cout << endl << "Peringatan: " << warn;
+			warn = "";
+		}
+		cout << endl << "> Input: ";
+		getline(cin, input);
+		if(input == "-") {
+			system("clear");
+			
+			return 0;
+		} else if(input == "<") {
+			
+			goto MAIN_MENU_2;
+		} else if(input == "11") {
+			
+			goto MENU_SEBELAS;
+		} else if(input == "12") {
+			
+			goto MENU_DUA_BELAS;
+		} else if(input == "13") {
+			
+			goto MENU_TIGA_BELAS;
+		} else if(input == "14") {
+			
+			goto MENU_EMPAT_BELAS;
+		} else if(input == "15") {
+			
+			goto MENU_LIMA_BELAS;
+		} else {
+			warn = "Menu tidak ditemukan!";
+			
+			goto MAIN_MENU_3;
 		}
 	}
 	
@@ -947,6 +1049,523 @@ int main() {
 		} else {
 			
 			goto MENU_DELAPAN;
+		}
+	}
+	
+	// MENU SEMBILAN
+	MENU_SEMBILAN: {
+		system("clear");
+		cout << "=-=-= Menu Sembilan =-=-=" << endl;
+		cout << "  Tugas: Menampilkan Diamond dari Looping" << endl;
+		if(warn != "") {
+			cout << "Peringatan: " << warn << endl;
+			warn = "";
+		}
+		
+		if(num1 == 0) {
+			cout  << endl << "> N: ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Harap isi N!";
+				
+				goto MENU_SEMBILAN;
+			}
+			try{
+				num1 = stoi(input);
+			} catch(exception &err) {
+				warn = "Harap isi N berupa angka!";
+				num1 = 0;
+				
+				goto MENU_SEMBILAN;
+			}
+			if(num1 < 1) {
+				warn = "Harap isi N minimal 1!";
+				num1 = 0;
+				
+				goto MENU_SEMBILAN;
+			}
+			
+			goto MENU_SEMBILAN;
+		}
+		cout << endl << "  N: " << num1 << endl;
+		
+		cout << "Hasil: " << endl << endl;
+		for(int i = 1; i <= num1; i++) {
+			for(int j = num1; j > i; j--) {
+				cout << " ";
+			}
+			for(int k = 1; k <= i; k++) {
+				cout << "*";
+			}
+			for(int l = 1; l <= i - 1; l++) {
+				cout << "*";
+			}
+			cout << endl;
+		}
+		for(int i = 1; i <= num1;  i++) {
+			for(int j = 1; j <= i; j++){
+				cout << " ";
+			}
+			for(int k = num1 - 1; k >= i; k--) {
+				cout << "*";
+			}
+			for(int m = num1 - 2; m >= i; m--) {
+				cout << "*";
+			}
+			cout << endl;
+		}
+		
+		cout << endl << "> Kembali ke menu utama? [Y/n]: ";
+		getline(cin, input);
+		if(input == "y" || input == "Y") {
+			num1 = 0;
+			
+			goto MAIN_MENU_2;
+		} else if(input == "n" || input == "N") {
+			system("clear");
+			
+			return 0;
+		} else {
+			
+			goto MENU_SEMBILAN;
+		}
+	}
+	
+	// MENU SEMBILAN
+	MENU_SEPULUH: {
+		system("clear");
+		cout << "=-=-= Menu Sepuluh =-=-=" << endl;
+		cout << "  Tugas: Menampilkan Diamond dari Looping" << endl;
+		if(warn != "") {
+			cout << "Peringatan: " << warn << endl;
+			warn = "";
+		}
+		
+		if(word1 == "") {
+			cout << endl << "> Nama Pegawai: ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Maaf, Nama pegawai tidak boleh kosong!";
+			
+				goto MENU_SEPULUH;
+			} else if(input.length() < 3) {
+				warn = "Maaf, Nama pegawai minimal 3 karakter!";
+			
+				goto MENU_SEPULUH;
+			}
+			word1 = input;
+			
+			goto MENU_SEPULUH;
+		}
+		cout << endl << "  Nama Pegawai: " << word1 << endl;
+		
+		if(num1 == 0)  {
+			cout << endl << "> NIP: ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Maaf, Mohon isi NIP dengan benar!";
+			
+				goto MENU_SEPULUH;
+			}
+			try{
+				num1 = stoi(input);
+			} catch(exception &err) {
+				warn = "Maaf, Mohon isi NIP dengan benar!";
+				num1 = 0;
+			
+				goto MENU_SEPULUH;
+			}
+			if(num1 < 0) {
+				warn = "Maaf, Mohon isi NIP dengan benar!";
+				num1 = 0;
+				
+				goto MENU_SEPULUH;
+			}
+			
+			goto MENU_SEPULUH;
+		}
+		cout << "  NIP: " << int(num1) << endl;
+		
+		if(num2 == 0) {
+			cout << endl << "> Jam Masuk: ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Maaf, Mohon isi Jam Masuk dengan benar!";
+			
+				goto MENU_SEPULUH;
+			}try{
+				num2 = stoi(input);
+			} catch(exception &err) {
+				warn = "Maaf, Mohon isi Jam Masuk dengan benar!";
+				num2 = 0;
+			
+				goto MENU_SEPULUH;
+			}
+			if(num2 <= 0) {
+				warn = "Maaf, Mohon isi Jam Masuk dengan benar!";
+				num2 = 0;
+			
+				goto MENU_SEPULUH;
+			}
+			
+			goto MENU_SEPULUH;
+		}
+		cout << "  Jam Masuk: " << num2 << endl;
+		
+		if(num2 >= 0 && num2 <= 7) {
+			num2 = 7;
+		} else if(num2 >= 13) {
+			num2 = 15;
+		}
+		num3 = 17.00 - num2;
+		cout << endl << "Hasil: " << word1 << ", Total jam kerja anda hari ini adalah " << num3 << " Jam." << endl;
+		cout << "Maka honor anda hari ini adalah Rp. " << num3*80000 << ",00.";
+		
+		cout << endl << "> Kembali ke menu utama? [Y/n]: ";
+		getline(cin, input);
+		if(input == "y" || input == "Y") {
+			num1 = 0;
+			num2 = 0;
+			num3 = 0;
+			word1 = "";
+			
+			goto MAIN_MENU_2;
+		} else if(input == "n" || input == "N") {
+			system("clear");
+			
+			return 0;
+		} else {
+			
+			goto MENU_SEPULUH;
+		}
+	}
+	
+	// MENU SEBELAS
+	MENU_SEBELAS: {
+		system("clear");
+		cout << "=-=-= Menu Sebelas =-=-=" << endl;
+		cout << "  Tugas: Bilangan Prima" << endl;
+		if(warn != "") {
+			cout << "Peringatan: " << warn << endl;
+			warn = "";
+		}
+		
+		if(num1 == 0) {
+			cout << endl << "> Nilai n: ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Maaf, Mohon isi nilai n dengan benar!";
+			
+				goto MENU_SEBELAS;
+			}
+			try{
+				num1 = stoi(input);
+			} catch(exception &err) {
+				warn = "Maaf, Mohon isi nilai n dengan benar!";
+				num1 = 0;
+			
+				goto MENU_SEBELAS;
+			}
+			if(num1 < 0) {
+				warn = "Maaf, Mohon isi nilai n dengan benar!";
+				num1 = 0;
+				
+				goto MENU_SEBELAS;
+			}
+			
+			goto MENU_SEBELAS;
+		}
+		cout << "  Nilai n: " << num1 << endl;
+		
+		for(int i = 1; i <= num1; i++){
+			num2 = 0;
+  
+			for(int j = 1; j <= i; j++){
+				if(i % j == 0){
+					num2++;
+				}
+			}
+			cout << "  " << i;
+			if(num2 == 2) {
+				cout << " <--- Bilangan Prima";
+			}
+			
+			cout << endl;
+		}
+		
+		cout << endl << "> Kembali ke menu utama? [Y/n]: ";
+		getline(cin, input);
+		if(input == "y" || input == "Y") {
+			num1 = 0;
+			
+			goto MAIN_MENU_3;
+		} else if(input == "n" || input == "N") {
+			system("clear");
+			
+			return 0;
+		} else {
+			
+			goto MENU_SEBELAS;
+		}
+	}
+	
+	// MENU DUA BELAS
+	MENU_DUA_BELAS: {
+		system("clear");
+		cout << "=-=-= Menu Dua Belas =-=-=" << endl;
+		cout << "  Tugas: Login Form" << endl;
+		if(warn != "") {
+			cout << "Peringatan: " << warn << endl;
+			warn = "";
+		}
+		
+		if(num1 < 3) {
+			if(word1 == "") {
+				cout << endl << "> Username: ";
+				getline(cin, input);
+				if(input != "RPLJuara") {
+					warn = "Maaf, Username salah!";
+					num1++;
+				
+					goto MENU_DUA_BELAS;
+				}
+				word1 = input;
+				
+				goto MENU_DUA_BELAS;
+			}
+			cout << endl << "  Username: " << word1 << endl;
+			
+			if(word2 == "") {
+				cout << endl << "> Password: ";
+				getline(cin, input);
+				if(input != "YoYoAyo") {
+					warn = "Maaf, Password salah!";
+					num1++;
+				
+					goto MENU_DUA_BELAS;
+				}
+				word2 = input;
+				
+				goto MENU_DUA_BELAS;
+			}
+			cout << "  Password: *******" << endl;
+			
+			cout << endl << "Hasil: Login Success" << endl;
+		} else {
+			cout << endl << "Maaf, kesempatan anda sudah habis" << endl;
+		}
+		
+		cout << endl << "> Kembali ke menu utama? [Y/n]: ";
+		getline(cin, input);
+		if(input == "y" || input == "Y") {
+			num1 = 0;
+			word1 = "";
+			word2 = "";
+			
+			goto MAIN_MENU_3;
+		} else if(input == "n" || input == "N") {
+			system("clear");
+			
+			return 0;
+		} else {
+			
+			goto MENU_DUA_BELAS;
+		}
+	}
+	
+	// MENU TIGA BELAS
+	MENU_TIGA_BELAS: {
+		system("clear");
+		cout << "=-=-= Menu Tiga Belas =-=-=" << endl
+			<< "Tugas: Bilangan terbesar dari dua bilangan menggunakan Fungsi" << endl;
+		if(warn != "") {
+			cout << "Peringatan : " << warn << endl;
+			
+			warn = "";
+		}
+		
+		if(num1 == 0) {
+			cout << endl << "> Angka pertama : ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Maaf, Mohon isi angka dengan benar!";
+			
+				goto MENU_TIGA_BELAS;
+			}
+			try{
+				num1 = stoi(input);
+			} catch(exception &err) {
+				warn = "Maaf, Mohon isi angka berupa nomor!";
+				num1 = 0;
+			
+				goto MENU_TIGA_BELAS;
+			}
+			goto MENU_TIGA_BELAS;
+		}
+		cout << endl << "  Angka pertama : " << num1 << endl;
+		
+		if(num2 == 0) {
+			cout << "> Angka kedua : ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Maaf, Mohon isi angka dengan benar!";
+			
+				goto MENU_TIGA_BELAS;
+			}
+			try{
+				num2 = stoi(input);
+			} catch(exception &err) {
+				warn = "Maaf, Mohon isi angka berupa nomor!";
+				num2 = 0;
+			
+				goto MENU_TIGA_BELAS;
+			}
+			goto MENU_TIGA_BELAS;
+		}
+		cout << "  Angka kedua : " << num2 << endl;
+		
+		cout << "Angka terbesar adalah : " << angkaTerbesar(num1, num2) << endl;
+		
+		cout << endl << "> Kembali ke menu utama? [Y/n] : ";
+		getline(cin, input);
+		if(input == "y" || input == "Y") {
+			num1 = 0;
+			num2 = 0;
+			num3 = 0;
+			
+			goto MAIN_MENU_3;
+		} else if(input == "n" || input == "N") {
+			system("clear");
+			
+			return 0;
+		} else {
+			
+			goto MENU_TIGA_BELAS;
+		}
+	}
+	
+	// MENU EMPAT BELAS
+	MENU_EMPAT_BELAS: {
+		system("clear");
+		cout << "=-=-= Menu Empat Belas =-=-=" << endl
+			<< "Tugas: Total penjumlahan deret menggunakan Fungsi" << endl;
+		if(warn != "") {
+			cout << "Peringatan : " << warn << endl;
+			
+			warn = "";
+		}
+		
+		if(num1 == 0) {
+			cout << endl << "> n : ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Maaf, Mohon isi n dengan benar!";
+			
+				goto MENU_EMPAT_BELAS;
+			}
+			try{
+				num1 = stoi(input);
+			} catch(exception &err) {
+				warn = "Maaf, Mohon isi n berupa nomor!";
+				num1 = 0;
+			
+				goto MENU_EMPAT_BELAS;
+			}
+			if(num1 <= 0) {
+				warn = "Maaf, Mohon isi n minimal 1!";
+				num1 = 0;
+			
+				goto MENU_EMPAT_BELAS;
+			}
+			goto MENU_EMPAT_BELAS;
+		}
+		cout << endl << "  n : " << num1 << endl;
+		
+		penjumlahanDeret(num1);
+		
+		cout << endl << "> Kembali ke menu utama? [Y/n] : ";
+		getline(cin, input);
+		if(input == "y" || input == "Y") {
+			num1 = 0;
+			
+			goto MAIN_MENU_3;
+		} else if(input == "n" || input == "N") {
+			system("clear");
+			
+			return 0;
+		} else {
+			
+			goto MENU_EMPAT_BELAS;
+		}
+	}
+	
+	// MENU LIMA BELAS
+	MENU_LIMA_BELAS: {
+		system("clear");
+		cout << "=-=-= Menu Lima Belas =-=-=" << endl
+			<< "Tugas: Penjumlahan dua bilangan menggunakan Fungsi" << endl;
+		if(warn != "") {
+			cout << "Peringatan : " << warn << endl;
+			
+			warn = "";
+		}
+		
+		if(num1 == 0) {
+			cout << endl << "> Angka pertama : ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Maaf, Mohon isi Angka pertama dengan benar!";
+			
+				goto MENU_LIMA_BELAS;
+			}
+			try{
+				num1 = stoi(input);
+			} catch(exception &err) {
+				warn = "Maaf, Mohon isi Angka pertama berupa nomor!";
+				num1 = 0;
+			
+				goto MENU_LIMA_BELAS;
+			}
+			goto MENU_LIMA_BELAS;
+		}
+		cout << endl << "  Angka pertama : " << num1 << endl;
+		
+		if(num2 == 0) {
+			cout << "> Angka kedua : ";
+			getline(cin, input);
+			if(input == "") {
+				warn = "Maaf, Mohon isi Angka kedua dengan benar!";
+			
+				goto MENU_LIMA_BELAS;
+			}
+			try{
+				num2 = stoi(input);
+			} catch(exception &err) {
+				warn = "Maaf, Mohon isi Angka kedua berupa nomor!";
+				num2 = 0;
+			
+				goto MENU_LIMA_BELAS;
+			}
+			goto MENU_LIMA_BELAS;
+		}
+		cout << "  Angka kedua : " << num2 << endl;
+		cout << "Hasil : " << num1 << " + " << num2 << " = "
+			<< penjumlahan(num1, num2) << endl;
+		
+		cout << endl << "> Kembali ke menu utama? [Y/n] : ";
+		getline(cin, input);
+		if(input == "y" || input == "Y") {
+			num1 = 0;
+			num2 = 0;
+			
+			goto MAIN_MENU_3;
+		} else if(input == "n" || input == "N") {
+			system("clear");
+			
+			return 0;
+		} else {
+			
+			goto MENU_LIMA_BELAS;
 		}
 	}
 	
